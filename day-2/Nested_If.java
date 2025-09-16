@@ -15,6 +15,7 @@ public class Nested_If {
 
             }
             else System.out.println("Not Eligible");
+
         }
     }
     
