@@ -14,7 +14,7 @@ public class Nested_If {
                 if(age>=60) System.out.println("Senior citizen vote");
 
             }
-            if(age<18) System.out.println("Not Eligible");
+            else System.out.println("Not Eligible");
         }
     }
     
