@@ -6,7 +6,5 @@ public class Circle {
             int ra=sc.nextInt();
             System.out.println("The Radius of the Circle is : "+(3.14*(ra*ra)));
         }
-
     }
-    
 }
