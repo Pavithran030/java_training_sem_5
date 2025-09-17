@@ -8,6 +8,9 @@ public class Amstrong_Number {
             int num=inp.nextInt();
             int fin=num,co=num,count=0;
             int re=0;
+
+            // efficient way to count the length of the integer without inbuilt functions
+            
             do{
                 count++;
                 co/=10;
