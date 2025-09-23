@@ -1,5 +1,3 @@
-
-
 public class Methods {
     public static void main(String[] args) {
         // Methods c=new Methods();
@@ -8,5 +6,4 @@ public class Methods {
     static void car(){
         System.out.println("Its a Ferrahi");
     }
-    
 }
