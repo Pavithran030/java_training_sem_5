@@ -12,7 +12,7 @@ public class Bank_Problem{
     }
 
     double dep_account(double  depo){
-        return (amo+depo);
+        return amo+depo;
     }
 
     double with_account(double with){
@@ -21,8 +21,11 @@ public class Bank_Problem{
 
     public static void main(String[] args) {
         try(Scanner sc=new Scanner(System.in)){
+            System.out.print("Enter the Account Number : ");
             int acc=sc.nextInt();
+            System.out.print("Enter the Amount to Deposite : ");
             double am=sc.nextDouble();
+            System.out.print("Enter the Amount to Withdraw : ");
             double wi=sc.nextDouble();
             Bank_Problem ba=new Bank_Problem(am);
 
@@ -31,7 +34,7 @@ public class Bank_Problem{
             if(ba.with_account(wi)<0){
                 System.out.println("Insufficient Balance");
             }
-            else System.out.println(ba.with_account(wi));
+            else System.out.println("Total Amount After Withdrawed : "+ba.with_account(wi));
         }
     
     }   
