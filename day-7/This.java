@@ -16,10 +16,9 @@ class Man{
         System.out.print(a);
         this.show();
     }
-
     void show(){
         System.out.println(" "+"Ultimate Alien....");
     }
 
-    
+ 
 }
