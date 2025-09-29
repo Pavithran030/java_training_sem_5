@@ -1,4 +1,4 @@
-public class Multi_Inheritance {
+public class Hierarchical_Inheritance {
     public static void main(String[] args) {
         Power t1=new Power();
         System.out.println(t1.engine1(100));
