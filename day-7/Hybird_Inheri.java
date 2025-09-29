@@ -29,8 +29,7 @@ public class Hybird_Inheri {
         Inter i=new Inter();
         i.a();
         i.b();
-        i.dum();
-        
+        i.dum();   
     }
     
 }
