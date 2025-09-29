@@ -28,8 +28,6 @@ public class Bank_Problem{
             System.out.print("Enter the Amount to Withdraw : ");
             double wi=sc.nextDouble();
             Bank_Problem ba=new Bank_Problem(am);
-
-            // Bank_Problem dp=new Bank_Problem(am);
             System.out.println("Account No : "+acc+" Balance After Deposite : "+ba.dep_account(am));
             if(ba.with_account(wi)<0){
                 System.out.println("Insufficient Balance");
