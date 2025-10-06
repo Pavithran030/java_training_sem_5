@@ -9,9 +9,9 @@ class A{
 }
 
 class B extends A{
-    void show(){
+    // void show(){
         
-    }
+    // }
 }
 
 public class Final_Method {
