@@ -13,6 +13,8 @@ class Doubly{
 
     Node head,tail;
 
+    // CREATION OF A LINKED LIST OR INSERITON.....
+
     void insert(int val){
 
         Node ins=new Node(val);
@@ -22,15 +24,70 @@ class Doubly{
         if(head==null){
             head=ins;
             tail=ins;
+            return;
         }
 
-        else{
-            tail.next=ins;
-            ins.pre=tail;
-            tail=ins;
+        tail.next=ins;
+        ins.pre=tail; // this is the changes between single and a doubly linked list
+        tail=ins;
+
+    }
+
+    // TO INSERT AT THE BEGINNING
+
+    void begin(int val){
+
+        Node b=new Node(val);
+        if(head.next==null){
+            System.out.println("The Linked List is Empty......");
+            return;
+        }
+
+        b.next=head;
+        b.pre=null;
+        head=b;
+
+    }
+
+    // INSERTION AT POSITION
+
+    void posinsert(int ind,int val){
+        Node p=new Node(val);
+        Node temp=head;
+
+        for(int i=0;i<ind-1;i++){
+            temp=temp.next;
+        }
+        p.next=temp.next;
+
+        if(temp.next!=null) {    // to hand the NULLPOINTEREXCEPTION
+            temp.next.pre=p;
+        }
+
+        p.pre=temp;
+        temp.next=p;
+    }
+
+    // TO DELETE AT THE SPECIFIC POSITION...
+
+    void posdelete(int ind){
+
+        Node temp=head;
+
+        for(int i=0;i<ind-2;i++){
+            temp=temp.next;
+        }
+        temp.next=temp.next.next;
+
+        if(temp.next!=null){
+            temp.next.pre=temp;
         }
 
     }
+
+
+
+    // TO PRINT IN FORWARD.....
 
     void print(){
         Node temp=head;
@@ -45,6 +102,7 @@ class Doubly{
     // TO PRINT IN REVERSE.....
 
     void printrev(){
+
         Node temp=tail;
 
         while(temp!=null){
@@ -66,9 +124,16 @@ public class Doubly_LinkedList {
         System.out.println("Doubly Linked List in a Forward.....");
         du.print();
 
-        System.out.println("\n\nDoubly Linked List in a Backward.....");
-        
+        System.out.println("\n\nDoubly Linked List in a Backward.....");      
         du.printrev();
+
+        System.out.println("\n\nAfter Insertion at the Begin.....");
+        du.posinsert(1, -10);
+        du.print();
+
+        System.out.println("\n\nDelete at the Position.....");
+        du.posdelete(2);
+        du.print();
     }
     
 }
