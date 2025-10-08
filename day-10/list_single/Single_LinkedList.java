@@ -24,6 +24,14 @@ class List{
     void atlast(int num){
 
         Node l=new Node(num);
+        l.next=null;
+
+        if(head==null){
+            head=l;
+            tail=l;
+            return;
+        }
+
         tail.next=l;
         tail=l;
 
@@ -31,20 +39,20 @@ class List{
 
     // TO INSERT A DATA INTO A LINKED LIST
 
-    void insert(int data){
-        Node da=new Node(data);   
-        da.next=null;
+    // void insert(int data){
+    //     Node da=new Node(data);   
+    //     da.next=null;
 
-        if(head==null){
-            head=da;
-            tail=da;
-        }
-        else{
-            tail.next=da;
-            tail=da;
-        }
+    //     if(head==null){
+    //         head=da;
+    //         tail=da;
+    //     }
+    //     else{
+    //         tail.next=da;
+    //         tail=da;
+    //     }
         
-    }
+    // }
 
     // INSERT DATA AT THE SPECIFIC LOCATION
 
@@ -157,7 +165,7 @@ public class Single_LinkedList {
         List ls=new List();
 
         for(int i=80;i>=0;i-=20){
-            ls.insert(i);
+            ls.atlast(i);
         }
         System.out.println("The Linked List After Insert the Initial Elements...");
         ls.print();
