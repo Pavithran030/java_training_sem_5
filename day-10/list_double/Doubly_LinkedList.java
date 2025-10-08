@@ -38,15 +38,16 @@ class Doubly{
     void begin(int val){
 
         Node b=new Node(val);
-        if(head.next==null){
-            System.out.println("The Linked List is Empty......");
-            return;
+        b.next=head;
+
+        // If the list was not empty, update the original head's previous pointer
+
+        if(head!=null){
+            head.pre=b; 
         }
 
-        b.next=head;
-        b.pre=null;
+        // The new node is now the head of the list
         head=b;
-
     }
 
     // INSERTION AT POSITION
@@ -86,6 +87,29 @@ class Doubly{
     }
 
 
+    //DELETE AT FIRST..
+
+    void lastdelete(){
+
+        if(tail==null){
+            System.out.println("No element to delete....");
+            return ;
+        }
+
+        if(tail==null){
+            head=null;
+            tail=null;
+            System.out.println("The only one node is deleted.....");
+            return;
+
+        }
+
+        Node lst=tail.pre;
+        lst.next=null;
+        tail=lst;
+
+
+    }
 
     // TO PRINT IN FORWARD.....
 
@@ -127,12 +151,20 @@ public class Doubly_LinkedList {
         System.out.println("\n\nDoubly Linked List in a Backward.....");      
         du.printrev();
 
-        System.out.println("\n\nAfter Insertion at the Begin.....");
+        System.out.println("\n\nAfter Insertion Position.....");
         du.posinsert(1, -10);
+        du.print();
+
+        System.out.println("\n\nAfter Insertion at the Begin.....");
+        du.begin(-10);
         du.print();
 
         System.out.println("\n\nDelete at the Position.....");
         du.posdelete(2);
+        du.print();
+
+        System.out.println("\n\nDelete at Last.....");
+        du.lastdelete();
         du.print();
     }
     
