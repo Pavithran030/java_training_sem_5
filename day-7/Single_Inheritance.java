@@ -14,8 +14,7 @@ public class Single_Inheritance {
     public static void main(String[] args) {
         Steering s1=new Steering();
         s1.power();
-        s1.wheel();
-        
+        s1.wheel();    
     }
     
 }
