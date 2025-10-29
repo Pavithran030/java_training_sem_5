@@ -87,17 +87,4 @@ public class MergeSort {
         System.out.println("Sorted array: " + Arrays.toString(arr));
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
