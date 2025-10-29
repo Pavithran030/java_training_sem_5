@@ -9,7 +9,7 @@ class Node {
     }
 }
 
-class Operations {
+class Operationss {
 
     Node root;
 
@@ -46,7 +46,7 @@ class Operations {
 public class Binary_Tree {
 
     public static void main(String[] args) {
-        Operations b = new Operations();
+        Operationss b = new Operationss();
         b.insert(100);
         b.insert(30);
         b.insert(20);
