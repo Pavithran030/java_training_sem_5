@@ -13,24 +13,27 @@ class Operationss {
 
     Node root;
 
+    // function to call the function to recursively insert...
     public void insert(int data) {
         root = insertRec(root, data);
 
     }
 
+    // function to create a tree 
     public Node insertRec(Node root, int data) {
 
         if (root == null) {
             root = new Node(data);
-        } else if (data < root.data) {
+        } else if (data < root.data) {      // small elements to the left of the root...
             root.left = insertRec(root.left, data);
-        } else if (data > root.data) {
+        } else if (data > root.data) {     // large elements to the right of the root...
             root.right = insertRec(root.right, data);
         }
 
         return root;
     }
 
+    // to display the display the element in the tree...
     public void preorder(Node val) {
         if (val == null) {
             return;
