@@ -1,43 +1,73 @@
 
-
 class Node {
+
     int data;
-    Node l,r;
-    Node(int a){
-        this.data=a;
-        l=r=null;
+    Node l, r;
+
+    Node(int a) {
+        this.data = a;
+        l = r = null;
     }
 }
 
-
 public class Tree {
+
     Node root;
 
-    void preorder(Node root){
-        System.out.print(root.data+" ");
-        preorder(root.l);
-        
-        preorder(root.r);
-        
+    void preorder(Node val) {
+        if (val == null) {
+            return;
+        }
+
+        System.out.print(val.data + " ");
+        preorder(val.l);
+        preorder(val.r);
+
     }
 
-    void postorder(Node root){
-        postorder(root.l);
-        postorder(root.r);
-        System.out.print(root.data+" ");
+    void postorder(Node val) {
+        if (val == null) {
+            return;
+        }
+
+        postorder(val.l);
+        postorder(val.r);
+        System.out.print(val.data + " ");
     }
 
-    void inorder(Node root){
-        preorder(root.l);
-        System.out.println(root.data+" ");
-        preorder(root.r);
-        
+    void inorder(Node val) {
+        if (val == null) {
+            return;
+        }
+
+        inorder(val.l);
+        System.out.print(val.data + " ");
+        inorder(val.r);
+
     }
 
     public static void main(String[] args) {
-        
+        Tree n = new Tree();
+        n.root = new Node(1000);
+        n.root.l = new Node(10);
+        n.root.l.l = new Node(5);
+        n.root.r = new Node(2000);
+        n.root.r.l = new Node(1500);
+
+        /*
+                         1000
+                        /    \
+                      10     2000
+                      /      /   
+                     5     1500   
+         */
+        System.out.print("Inorder\n");
+        n.inorder(n.root);
+        System.out.println("\nPreorder");
+        n.preorder(n.root);
+        System.out.println("\nPostorder");
+        n.postorder(n.root);
+
     }
 
-
-    
 }
