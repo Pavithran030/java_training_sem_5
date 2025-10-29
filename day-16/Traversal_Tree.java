@@ -10,7 +10,7 @@ class Node {
     }
 }
 
-public class Tree {
+public class Traversal_Tree {
 
     Node root;
 
@@ -47,7 +47,7 @@ public class Tree {
     }
 
     public static void main(String[] args) {
-        Tree n = new Tree();
+        Traversal_Tree n = new Traversal_Tree();
         n.root = new Node(1000);
         n.root.l = new Node(10);
         n.root.l.l = new Node(5);
